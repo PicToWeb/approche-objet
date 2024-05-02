@@ -23,13 +23,13 @@ public class TestPersonne {
 		nb1.display();
 		nb1.setNom("Marin");
 		nb1.setPrenom("Paul");
-		System.out.println(nb1.getAdress().libelleRue);
+		System.out.println(nb1.getAdress().getLibelleRue());
 		nb1.setAdress(adressNew);
 		nb1.display();
 		
 		System.out.println(nb1.getNom());
 		System.out.println(nb1.getPrenom());
-		System.out.println(nb1.getAdress().libelleRue);
+		System.out.println(nb1.getAdress().getLibelleRue());
 		
 		
 
