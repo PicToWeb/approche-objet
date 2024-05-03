@@ -5,7 +5,6 @@ import java.lang.Integer;
 public class TestMethodeStatic {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		//convertir string en int
 		final String chaine = "12";
