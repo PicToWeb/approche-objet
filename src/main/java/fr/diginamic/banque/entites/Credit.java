@@ -2,7 +2,7 @@ package fr.diginamic.banque.entites;
 
 public class Credit extends Operation {
 
-	public Credit(String dateOperation, int montantOperation) {
+	public Credit(String dateOperation, double montantOperation) {
 		super(dateOperation, montantOperation);
 		
 	}
@@ -13,8 +13,8 @@ public class Credit extends Operation {
 		return "CREDIT ";
 	}
 	@Override
-	public int  getMontant() {
-		return solde += montantOperation;
+	public double  getMontant(double solde) {
+		return solde + montantOperation;
 	}
 
 	

@@ -2,7 +2,7 @@ package fr.diginamic.banque.entites;
 
 public class Debit extends Operation {
 
-	public Debit(String dateOperation, int montantOperation) {
+	public Debit(String dateOperation, double montantOperation) {
 		super(dateOperation, montantOperation);
 		
 	}
@@ -13,8 +13,8 @@ public class Debit extends Operation {
 		return "DEBIT " ;
 	}
 	@Override
-	public int  getMontant() {
-		return solde -= montantOperation;
+	public double  getMontant(double solde) {
+		return solde - montantOperation;
 	}
 
 }
