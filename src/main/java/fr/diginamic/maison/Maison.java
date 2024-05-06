@@ -14,11 +14,13 @@ public class Maison {
 	public String toString() {
 
 		String voirPiece = "";
+		
 		for (Piece p : pieces) {
-			voirPiece += p.getClass().getSimpleName() + ", ";
+			voirPiece += p.getClass().getSimpleName() + " = Numéro :  " +  p.getType() + ", " ;
+			
 		}
 
-		return "Voici les pièces de la maison : " + voirPiece;
+		return "Voici les pièces de la maison : " + voirPiece ;
 	}
 
 	public void ajouterPiece(Piece piece) {
@@ -62,8 +64,9 @@ public class Maison {
 	public int getNbPiecesParTypePiece(int type) {
 		int number=0;
 		for(Piece p : pieces) {
-			if(p.getType() == type)
+			if(p.getType() == type) {
 				number += 1;
+			}
 		}
 		
 		return number;
