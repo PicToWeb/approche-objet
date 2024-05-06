@@ -13,6 +13,7 @@ public class TestMoyenne {
 
 		CalculMoyenne average1 = new CalculMoyenne(array1);
 		average1.ajout(35.5);
+		System.out.println(Arrays.toString(average1.array));
 		System.out.println("Premiere moyenne : " + average1.calcul());
 		
 		CalculMoyenne average2 = new CalculMoyenne(array2);
