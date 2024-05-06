@@ -6,20 +6,17 @@ public class Salarie {
 	String prenom;
 	double salaire;
 	
-	public Salarie() {
-		
+	public Salarie(String [] array) {
+		nom = array[0];
+		prenom = array[1];
+		String replace = array[2].replace(" ", "");
+		double transform = Double.parseDouble(replace);
+		salaire=transform;
 	}
 	
 	public String toString() {
 		return "Nom : " + nom + " Prenom : " + prenom + " Salaire : " + salaire;
 	}
 	
-	public void ajoutSalarie(String [] array) {
-	nom = array[0];
-	prenom = array[1];
-	String replace = array[2].replace(" ", "");
-	double transform = Double.parseDouble(replace);
-	salaire=transform;
-	}
 	
 }

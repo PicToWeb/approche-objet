@@ -38,8 +38,7 @@ public class ManipulationChaine {
 		
 		
 		//Instance de salarie
-		Salarie user1 = new Salarie();
-		user1.ajoutSalarie(array);
+		Salarie user1 = new Salarie(array);
 		System.out.println(user1.toString());
 		
 		 
