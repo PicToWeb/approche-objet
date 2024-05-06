@@ -6,6 +6,7 @@ public class Personnage {
 	
 	protected int force;
 	protected int pointDeVie;
+	int score;
 	
 	/**
 	 * @param force
@@ -31,10 +32,13 @@ public class Personnage {
 		this.pointDeVie = pointDeVie;
 	}
 	
-	public int setRandomRange(int low,int high) {
+	public static int setRandomRange(int low,int high) {
 		Random r = new Random();
 		int result = r.nextInt(high-low) + low;
 		return result;
+	}
+	public int getScore() {
+		return score;
 	}
 	
 
