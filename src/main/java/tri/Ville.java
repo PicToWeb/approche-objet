@@ -1,12 +1,11 @@
-package fichier;
+package tri;
 
-public class Ville  {
+public class Ville implements Comparable<Ville> {
 
 	String nom;
 	String codeDep;
 	String nomRegion;
 	int popTotal;
-	private int pop;
 
 	/**
 	 * @param nom
@@ -23,7 +22,7 @@ public class Ville  {
 	}
 
 	public String toString() {
-		return nom + " " + codeDep + " " + nomRegion + " " + popTotal;
+		return nom + " " + codeDep + " " + nomRegion + " " + popTotal + "\n";
 
 	}
 
@@ -59,5 +58,24 @@ public class Ville  {
 		this.popTotal = popTotal;
 	}
 
+  //TRIER PAR ORDRE ALPHABETIQUE
+	@Override
+	public int compareTo(Ville autre) {
+		return nom.compareTo(autre.getNom());
+	}
+	
+//	@Override
+//	public int compareTo(Ville autre) {
+//		if (popTotal > autre.getPopTotal()) {
+//			return -1;
+//		} else if (popTotal < autre.getPopTotal()) {
+//			return 1;
+//		}
+//		return 0;
+//	}
+
+	public String toCsv() {
+		return nomRegion + ";" + codeDep + ";" + nom + ";" + popTotal;
+	}
 
 }
