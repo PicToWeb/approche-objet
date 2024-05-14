@@ -1,12 +1,13 @@
 package fr.diginamic.recensement;
 
 import java.io.IOException;
-
+import java.util.Collections;
 import java.util.Scanner;
 
 import fr.diginamic.recensement.services.RecherchePopulationVille;
 import fr.diginamic.recensement.services.VillesPeupleDepartement;
 import fr.diginamic.recensement.services.VillesPeupleRegion;
+import fr.diginamic.recensement.services.ComparatorVilles;
 import fr.diginamic.recensement.services.RecherchePopulationDepartement;
 import fr.diginamic.recensement.services.RecherchePopulationRegion;
 
@@ -69,7 +70,15 @@ public class ApplicationRecensement {
 				rechercheViRegion.traiter(recensement, scanner2);
 				break;
 			case 8:
-				recensement.getVillesPlusPeuple();
+				Collections.sort(recensement.getVilles(),new ComparatorVilles());
+				int count = 0;
+				for (Ville p :recensement.getVilles()) {
+					if (count < 10) {
+						System.out.println(p.getNomCommune() + " " + p.getPopTot());
+						count++;
+					}
+					
+				}
 				break;
 			case 9:
 				exit = true;

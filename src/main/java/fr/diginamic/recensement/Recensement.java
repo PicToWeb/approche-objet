@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
+
 
 public class Recensement {
 
@@ -193,34 +193,13 @@ public class Recensement {
 
 	}
 	
-	public void getVillesPlusPeuple() {
+	public void getVillesPlusPeuple(String[] ville) {
+		
 
-		HashMap<String, Integer> DepartementPopulation = new HashMap<>();
-
-		Iterator<Ville> p = villes.iterator();
-
-		int i = 0;
-		Ville ville1=villes.get(0);
-		int first = ville1.getPopTot();
-
-		while (p.hasNext()) {
-
-			Ville newVille1 = p.next();
-			int newVille = newVille1.getPopTot();
-			
-			if (newVille>first) {
-				i = first;
-				DepartementPopulation.put(newVille1.getNomCommune(), i);
-
-			} else {
-				i = 0;
-			}
-			first = newVille;
-
-		}
-
-		tri(DepartementPopulation);
+		System.out.println();
 
 	}
+	
+	
 
 }
