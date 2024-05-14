@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import fr.diginamic.recensement.services.RecherchePopulationVille;
+import fr.diginamic.recensement.services.VillesPeupleDepartement;
+import fr.diginamic.recensement.services.VillesPeupleRegion;
 import fr.diginamic.recensement.services.RecherchePopulationDepartement;
 import fr.diginamic.recensement.services.RecherchePopulationRegion;
 
@@ -57,7 +59,17 @@ public class ApplicationRecensement {
 				recensement.getMostDepPeuple();
 				break;
 			case 6 : 
-				recensement.get10CityPopOfDep("34");
+				System.out.println("Quelle Département ? ");
+				VillesPeupleDepartement rechercheViDep = new VillesPeupleDepartement();
+				rechercheViDep.traiter(recensement, scanner2);
+				break;
+			case 7 : 
+				System.out.println("Quelle Région ? ");
+				VillesPeupleRegion rechercheViRegion = new VillesPeupleRegion();
+				rechercheViRegion.traiter(recensement, scanner2);
+				break;
+			case 8:
+				recensement.getVillesPlusPeuple();
 				break;
 			case 9:
 				exit = true;

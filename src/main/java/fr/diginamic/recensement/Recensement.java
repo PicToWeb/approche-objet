@@ -90,13 +90,13 @@ public class Recensement {
 		Iterator<Ville> p = villes.iterator();
 
 		int i = 0;
-		
+
 		Ville first = villes.get(0);
 		while (p.hasNext()) {
 			System.out.println(i);
 			Ville newVille = p.next();
 			if (newVille.getNomRegion().equals(first.getNomRegion())) {
-				i += newVille.getPopTot();			
+				i += newVille.getPopTot();
 				regionPopulation.put(first.getNomRegion(), i);
 			} else {
 				i = 0;
@@ -117,7 +117,7 @@ public class Recensement {
 		int i = 0;
 
 		Ville first = villes.get(0);
-		
+
 		while (p.hasNext()) {
 			Ville newVille = p.next();
 			if (newVille.getCodeDep().equals(first.getCodeDep())) {
@@ -132,9 +132,9 @@ public class Recensement {
 		tri(DepartementPopulation);
 
 	}
-	
+
 	public void get10CityPopOfDep(String departement) {
-		
+
 		HashMap<String, Integer> DepartementPopulation = new HashMap<>();
 
 		Iterator<Ville> p = villes.iterator();
@@ -142,25 +142,85 @@ public class Recensement {
 		int i = 0;
 
 		Ville first = villes.get(0);
-		
+
 		while (p.hasNext()) {
-			
+
 			Ville newVille = p.next();
 			String commune = first.getNomCommune();
-			
-			if (first.getCodeDep().equals(departement)) {	
+
+			if (first.getCodeDep().equals(departement)) {
 				i = first.getPopTot();
 				DepartementPopulation.put(commune, i);
-				
+
 			} else {
 				i = 0;
 			}
-			first=newVille;
+			first = newVille;
 
 		}
-		
+
 		tri(DepartementPopulation);
-		
+
+	}
+
+	public void get10CityPopOfRegion(String region) {
+
+		HashMap<String, Integer> DepartementPopulation = new HashMap<>();
+
+		Iterator<Ville> p = villes.iterator();
+
+		int i = 0;
+
+		Ville first = villes.get(0);
+
+		while (p.hasNext()) {
+
+			Ville newVille = p.next();
+			String commune = first.getNomCommune();
+
+			if (first.getNomRegion().equalsIgnoreCase(region)) {
+				i = first.getPopTot();
+				DepartementPopulation.put(commune, i);
+
+			} else {
+				i = 0;
+			}
+			first = newVille;
+
+		}
+
+		tri(DepartementPopulation);
+
+	}
+	
+	public void getVillesPlusPeuple() {
+
+		HashMap<String, Integer> DepartementPopulation = new HashMap<>();
+
+		Iterator<Ville> p = villes.iterator();
+
+		int i = 0;
+		Ville ville1=villes.get(0);
+		int first = ville1.getPopTot();
+
+		while (p.hasNext()) {
+
+			Ville newVille1 = p.next();
+			int newVille = newVille1.getPopTot();
+			
+			if (newVille>first) {
+				i = first;
+				DepartementPopulation.put(newVille1.getNomCommune(), i);
+
+			} else {
+				i = 0;
+			}
+			first = newVille;
+
+		}
+
+		tri(DepartementPopulation);
+
 	}
 
 }
