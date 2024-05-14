@@ -1,11 +1,15 @@
 package fr.diginamic.recensement;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import fr.diginamic.recensement.utils.TriRegion;
+import fr.diginamic.recensement.utils.TriVille;
+import fr.diginamic.recensement.utils.TriDepartement;
 
 public class Recensement {
 
@@ -83,7 +87,8 @@ public class Recensement {
 		}
 	}
 
-	public void getMostRegionPeuple() {
+	public void getMostRegionPeuple(Recensement recensement) {
+		Collections.sort(recensement.getVilles(), new TriRegion());
 
 		HashMap<String, Integer> regionPopulation = new HashMap<>();
 
@@ -93,7 +98,6 @@ public class Recensement {
 
 		Ville first = villes.get(0);
 		while (p.hasNext()) {
-			System.out.println(i);
 			Ville newVille = p.next();
 			if (newVille.getNomRegion().equals(first.getNomRegion())) {
 				i += newVille.getPopTot();
@@ -104,12 +108,13 @@ public class Recensement {
 			first = newVille;
 
 		}
+		
 		tri(regionPopulation);
 
 	}
 
-	public void getMostDepPeuple() {
-
+	public void getMostDepPeuple(Recensement recensement) {
+		Collections.sort(recensement.getVilles(), new TriDepartement());
 		HashMap<String, Integer> DepartementPopulation = new HashMap<>();
 
 		Iterator<Ville> p = villes.iterator();
@@ -192,14 +197,17 @@ public class Recensement {
 		tri(DepartementPopulation);
 
 	}
-	
-	public void getVillesPlusPeuple(String[] ville) {
-		
 
-		System.out.println();
+	public void getVillesPlusPeuple(Recensement recensement) {
+		Collections.sort(recensement.getVilles(), new TriVille());
+		int count = 0;
+		for (Ville p : recensement.getVilles()) {
+			if (count < 10) {
+				System.out.println(p.getNomCommune().toUpperCase() + " - Population : " + p.getPopTot());
+				count++;
+			}
 
+		}
 	}
-	
-	
 
 }
