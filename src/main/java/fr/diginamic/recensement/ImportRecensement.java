@@ -18,7 +18,7 @@ public class ImportRecensement {
 
 			String ligneColonne = lignes.remove(0);
 			
-			String[] colonnes = ligneColonne.split(";");
+			//String[] colonnes = ligneColonne.split(";");
 			
 			for (int i = 1; i < lignes.size() - 1; i++) {
 				String extractLigne = lignes.get(i);	

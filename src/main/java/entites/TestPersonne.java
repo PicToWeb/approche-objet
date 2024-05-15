@@ -15,7 +15,7 @@ public class TestPersonne {
 
 		// méthode 2
 		Personne nb2 = new Personne("Durant","Jean",new AdressePostale(35,"Ma super rue2",30000,"Nimes"));
-		
+		System.out.println(nb2);
 		
 		
 		//System.out.println(nb2.nom + nb2.prenom + nb2.adresse_postale.numeroRue  );

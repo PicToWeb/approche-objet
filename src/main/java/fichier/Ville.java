@@ -6,7 +6,6 @@ public class Ville  {
 	String codeDep;
 	String nomRegion;
 	int popTotal;
-	private int pop;
 
 	/**
 	 * @param nom
