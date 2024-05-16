@@ -8,18 +8,18 @@ public class TestVilles {
 
 		ArrayList<Ville> city = new ArrayList<>();
 
-		city.add(new Ville("Nice", 343000));
-		city.add(new Ville("Carcasonne", 47800));
-		city.add(new Ville("Naarbonne", 53400));
-		city.add(new Ville("Lyon", 484000));
-		city.add(new Ville("Foix", 9700));
-		city.add(new Ville("Pau", 77200));
-		city.add(new Ville("Marseille", 850700));
-		city.add(new Ville("Tarbes", 40600));
+		city.add(new Ville("Nice", 343000,Continent.EUROPE));
+		city.add(new Ville("Carcasonne", 47800,Continent.EUROPE));
+		city.add(new Ville("Naarbonne", 53400,Continent.EUROPE));
+		city.add(new Ville("Lyon", 484000,Continent.EUROPE));
+		city.add(new Ville("Foix", 9700,Continent.EUROPE));
+		city.add(new Ville("Pau", 77200,Continent.EUROPE));
+		city.add(new Ville("Marseille", 850700,Continent.EUROPE));
+		city.add(new Ville("Tarbes", 40600,Continent.EUROPE));
 
 		
 		// Boucle de traitement
-		Ville villeMax = new Ville("", 0);
+		Ville villeMax = new Ville("", 0,Continent.EUROPE);
 		Ville villeMin=city.get(0);
 		for (int i = 0; i < city.size(); i++) {
 			Ville villeCourante = city.get(i);

@@ -4,8 +4,8 @@ public class TestEquals {
 
 	public static void main(String[] args) {
 		
-		Ville v1 = new Ville("Montpellier",34000);
-		Ville v2 = new Ville("Montpellierr",34000);
+		Ville v1 = new Ville("Montpellier",34000,Continent.EUROPE);
+		Ville v2 = new Ville("Montpellierr",34000,Continent.EUROPE);
 		
 		if(v1.equals(v2)) {
 			System.out.println("yeah");
