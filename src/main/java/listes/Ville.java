@@ -17,6 +17,7 @@ public class Ville {
 		this.nombreHabitant = nombreHabitant;
 		this.continent = continent;
 	}
+	
 
 	@Override
 	public String toString() {
