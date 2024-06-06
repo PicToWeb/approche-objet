@@ -25,7 +25,6 @@ public class Rectangle extends Forme {
 
 	@Override
 	public double calculerPerimetre() {
-		// TODO Auto-generated method stub
 		return (longueur + largeur) * 2;
 	}
 

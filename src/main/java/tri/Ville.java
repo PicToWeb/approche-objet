@@ -1,10 +1,19 @@
 package tri;
 
+import annotations.Column;
+import annotations.Table;
+
+
+@Table (name = "VILLES")
 public class Ville implements Comparable<Ville> {
 
+	@Column (name="NOM_VILLE",length=3)
 	String nom;
+	@Column (name="CODE_DEPARTEMENT")
 	String codeDep;
+	@Column (name="NOM_REGION")
 	String nomRegion;
+	@Column (name="POPULATION_TOTAL")
 	int popTotal;
 
 	/**
